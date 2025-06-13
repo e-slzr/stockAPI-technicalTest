@@ -1,14 +1,13 @@
-﻿namespace StockAPI.Models
+﻿namespace StockAPI.Dtos
 {
-    public class Box
+    public class BoxDTO
     {
         public int Id { get; set; }
         public string Code { get; set; } = string.Empty;
         public int Quantity { get; set; }
         public string Location { get; set; } = string.Empty;
 
-        // Relaciones (entidades, no DTOs)
-        public ICollection<BoxProductTransaction> Transactions { get; set; } = new List<BoxProductTransaction>();
+        public List<TransactionDTO> Transactions { get; set; } = new();
     }
 
     public class TransactionDTO
@@ -19,5 +18,4 @@
         public int ProductId { get; set; }
         public string ProductName { get; set; } = string.Empty;
     }
-
 }

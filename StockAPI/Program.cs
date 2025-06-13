@@ -1,5 +1,6 @@
-using StockAPI.Data;
 using Microsoft.EntityFrameworkCore;
+using StockAPI.Data;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,3 +31,11 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// Program.cs
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+        // options.JsonSerializerOptions.WriteIndented = true; // Opcional, para legibilidad
+    });

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StockAPI.Data;
+using StockAPI.Dtos;
 using StockAPI.Models;
 
 namespace StockAPI.Controllers
@@ -16,18 +17,34 @@ namespace StockAPI.Controllers
             _context = context;
         }
 
-        // GET: api/boxes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Box>>> GetBoxes()
+        public async Task<ActionResult<IEnumerable<BoxDTO>>> GetBoxes()
         {
-            return await _context.Boxes
-                .Include(b => b.Transactions) // Incluye las transacciones de cada caja
+            var boxes = await _context.Boxes
+                .Include(b => b.Transactions)
+                    .ThenInclude(t => t.Product)
                 .ToListAsync();
+
+            var boxDtos = boxes.Select(b => new BoxDTO
+            {
+                Id = b.Id,
+                Code = b.Code,
+                Quantity = b.Quantity,
+                Location = b.Location,
+                Transactions = b.Transactions.Select(t => new Dtos.TransactionDTO
+                {
+                    Id = t.Id,
+                    Date = t.Date,
+                    ProductId = t.ProductId,
+                    ProductName = t.Product.Name
+                }).ToList()
+            }).ToList();
+
+            return Ok(boxDtos);
         }
 
-        // GET: api/boxes/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<Box>> GetBox(int id)
+        public async Task<ActionResult<BoxDTO>> GetBox(int id)
         {
             var box = await _context.Boxes
                 .Include(b => b.Transactions)
@@ -39,7 +56,22 @@ namespace StockAPI.Controllers
                 return NotFound();
             }
 
-            return box;
+            var boxDto = new BoxDTO
+            {
+                Id = box.Id,
+                Code = box.Code,
+                Quantity = box.Quantity,
+                Location = box.Location,
+                Transactions = box.Transactions.Select(t => new Dtos.TransactionDTO
+                {
+                    Id = t.Id,
+                    Date = t.Date,
+                    ProductId = t.ProductId,
+                    ProductName = t.Product.Name
+                }).ToList()
+            };
+
+            return Ok(boxDto);
         }
     }
 }
