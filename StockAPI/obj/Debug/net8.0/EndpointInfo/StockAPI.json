@@ -225,6 +225,10 @@
       "ProductStockDto": {
         "type": "object",
         "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "code": {
             "type": "string",
             "nullable": true
@@ -244,6 +248,20 @@
           "availableStock": {
             "type": "integer",
             "format": "int32"
+          },
+          "lastTransactionDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastOperationType": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastTransactionQuantity": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -47,23 +47,38 @@ namespace StockAPI.Controllers
 
         // Nuevo endpoint para obtener stock disponible por producto
         [HttpGet("stock-available")]
-        public async Task<ActionResult<IEnumerable<ProductStockDto>>> GetStockAvailable()
+        public async Task<ActionResult<IEnumerable<ProductStockDto>>> GetAvailableStock()
         {
-            var stockList = await _context.Products
-                .Select(p => new ProductStockDto
+            var products = await _context.Products
+                .Include(p => p.Transactions)
+                .ToListAsync();
+
+            var result = products.Select(p =>
+            {
+                var lastTransaction = p.Transactions
+                    .OrderByDescending(t => t.Date)
+                    .FirstOrDefault();
+
+                var availableStock = p.Transactions
+                    .Where(t => t.OperationType == "IN").Sum(t => t.Quantity) -
+                    p.Transactions.Where(t => t.OperationType == "OUT").Sum(t => t.Quantity);
+
+                return new ProductStockDto
                 {
+                    ProductId = p.Id,
                     Code = p.Code,
                     Name = p.Name,
                     Description = p.Description,
                     Status = p.Status,
-                    AvailableStock = p.Transactions
-                        .Where(t => t.OperationType == "IN").Sum(t => t.Quantity)
-                        - p.Transactions
-                        .Where(t => t.OperationType == "OUT").Sum(t => t.Quantity)
-                })
-                .ToListAsync();
+                    AvailableStock = availableStock,
+                    LastTransactionDate = lastTransaction?.Date,
+                    LastOperationType = lastTransaction?.OperationType,
+                    LastTransactionQuantity = lastTransaction?.Quantity
+                };
+            }).ToList();
 
-            return Ok(stockList);
+            return Ok(result);
         }
+
     }
 }
