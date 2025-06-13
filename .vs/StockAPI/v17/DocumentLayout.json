@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\eliu.salazar\\source\\repos\\stockAPI-technicalTest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AF3C1722-EE90-4EF5-8739-8B831E737AE1}|StockAPI\\StockAPI.csproj|c:\\users\\eliu.salazar\\source\\repos\\stockapi-technicaltest\\stockapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF3C1722-EE90-4EF5-8739-8B831E737AE1}|StockAPI\\StockAPI.csproj|solutionrelative:stockapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AF3C1722-EE90-4EF5-8739-8B831E737AE1}|StockAPI\\StockAPI.csproj|c:\\users\\eliu.salazar\\source\\repos\\stockapi-technicaltest\\stockapi\\dtos\\productstockdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AF3C1722-EE90-4EF5-8739-8B831E737AE1}|StockAPI\\StockAPI.csproj|solutionrelative:stockapi\\dtos\\productstockdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF3C1722-EE90-4EF5-8739-8B831E737AE1}|StockAPI\\StockAPI.csproj|c:\\users\\eliu.salazar\\source\\repos\\stockapi-technicaltest\\stockapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF3C1722-EE90-4EF5-8739-8B831E737AE1}|StockAPI\\StockAPI.csproj|solutionrelative:stockapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AF3C1722-EE90-4EF5-8739-8B831E737AE1}|StockAPI\\StockAPI.csproj|c:\\users\\eliu.salazar\\source\\repos\\stockapi-technicaltest\\stockapi\\dtos\\boxdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF3C1722-EE90-4EF5-8739-8B831E737AE1}|StockAPI\\StockAPI.csproj|solutionrelative:stockapi\\dtos\\boxdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF3C1722-EE90-4EF5-8739-8B831E737AE1}|StockAPI\\StockAPI.csproj|c:\\users\\eliu.salazar\\source\\repos\\stockapi-technicaltest\\stockapi\\dtos\\productdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF3C1722-EE90-4EF5-8739-8B831E737AE1}|StockAPI\\StockAPI.csproj|solutionrelative:stockapi\\dtos\\productdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AF3C1722-EE90-4EF5-8739-8B831E737AE1}|StockAPI\\StockAPI.csproj|c:\\users\\eliu.salazar\\source\\repos\\stockapi-technicaltest\\stockapi\\controllers\\boxescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +34,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "BoxDetailDto.cs",
+              "DocumentMoniker": "C:\\Users\\eliu.salazar\\source\\repos\\stockAPI-technicalTest\\StockAPI\\Dtos\\BoxDetailDto.cs",
+              "RelativeDocumentMoniker": "StockAPI\\Dtos\\BoxDetailDto.cs",
+              "ToolTip": "C:\\Users\\eliu.salazar\\source\\repos\\stockAPI-technicalTest\\StockAPI\\Dtos\\BoxDetailDto.cs",
+              "RelativeToolTip": "StockAPI\\Dtos\\BoxDetailDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T16:57:08.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductDetailDto.cs",
+              "DocumentMoniker": "C:\\Users\\eliu.salazar\\source\\repos\\stockAPI-technicalTest\\StockAPI\\Dtos\\ProductDetailDto.cs",
+              "RelativeDocumentMoniker": "StockAPI\\Dtos\\ProductDetailDto.cs",
+              "ToolTip": "C:\\Users\\eliu.salazar\\source\\repos\\stockAPI-technicalTest\\StockAPI\\Dtos\\ProductDetailDto.cs",
+              "RelativeToolTip": "StockAPI\\Dtos\\ProductDetailDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T16:56:41.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "BoxesController.cs",
               "DocumentMoniker": "C:\\Users\\eliu.salazar\\source\\repos\\stockAPI-technicalTest\\StockAPI\\Controllers\\BoxesController.cs",
               "RelativeDocumentMoniker": "StockAPI\\Controllers\\BoxesController.cs",
@@ -38,25 +72,24 @@
               "RelativeToolTip": "StockAPI\\Controllers\\BoxesController.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAAABwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T15:54:36.187Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T15:54:36.187Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\eliu.salazar\\source\\repos\\stockAPI-technicalTest\\StockAPI\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "StockAPI\\Controllers\\ProductsController.cs",
               "ToolTip": "C:\\Users\\eliu.salazar\\source\\repos\\stockAPI-technicalTest\\StockAPI\\Controllers\\ProductsController.cs",
               "RelativeToolTip": "StockAPI\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAIwDQAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAUwGkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-13T10:55:07.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ProductStockDto.cs",
               "DocumentMoniker": "C:\\Users\\eliu.salazar\\source\\repos\\stockAPI-technicalTest\\StockAPI\\Dtos\\ProductStockDto.cs",
               "RelativeDocumentMoniker": "StockAPI\\Dtos\\ProductStockDto.cs",
@@ -69,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\eliu.salazar\\source\\repos\\stockAPI-technicalTest\\StockAPI\\appsettings.json",
               "RelativeDocumentMoniker": "StockAPI\\appsettings.json",
@@ -77,8 +110,7 @@
               "RelativeToolTip": "StockAPI\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-13T09:08:23.8Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T09:08:23.8Z"
             }
           ]
         }

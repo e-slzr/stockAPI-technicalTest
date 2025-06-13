@@ -80,5 +80,51 @@ namespace StockAPI.Controllers
             return Ok(result);
         }
 
+        [HttpGet("{id}/details")]
+        public async Task<ActionResult<ProductDetailDto>> GetProductDetails(int id)
+        {
+            var product = await _context.Products
+                .Include(p => p.Transactions)
+                    .ThenInclude(t => t.Box)
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (product == null)
+                return NotFound();
+
+            var boxGroups = product.Transactions
+                .Where(t => t.OperationType == "IN")
+                .GroupBy(t => t.BoxId)
+                .Select(g =>
+                {
+                    var lastTransaction = g.OrderByDescending(t => t.Date).FirstOrDefault();
+                    var totalQuantity = g.Sum(t => t.Quantity) -
+                        product.Transactions
+                            .Where(t => t.BoxId == g.Key && t.OperationType == "OUT")
+                            .Sum(t => t.Quantity);
+
+                    return new BoxDetailDto
+                    {
+                        BoxId = g.Key,
+                        BoxCode = lastTransaction?.Box?.Code ?? "",
+                        Quantity = totalQuantity,
+                        LastTransactionDate = lastTransaction?.Date
+                    };
+                })
+                .Where(b => b.Quantity > 0)
+                .ToList();
+
+            var result = new ProductDetailDto
+            {
+                ProductId = product.Id,
+                Code = product.Code,
+                Name = product.Name,
+                Description = product.Description,
+                Status = product.Status,
+                Boxes = boxGroups
+            };
+
+            return Ok(result);
+        }
+
     }
 }
