@@ -47,7 +47,7 @@
   },
   {
     "ContainingType": "StockAPI.Controllers.ProductsController",
-    "Method": "GetStockAvailable",
+    "Method": "GetAvailableStock",
     "RelativePath": "api/Products/stock-available",
     "HttpMethod": "GET",
     "IsController": true,
